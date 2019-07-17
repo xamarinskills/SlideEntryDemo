@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local1="clr-namespace:SlideEntryDemo.CustomRendererCore"
+             x:Class="SlideEntryDemo.CustomControls.ImageSlideEntry">
+    <ContentView.Content>
+        <local1:GradientColorStack StartColor="#DF596C" EndColor="#FFB239" >
+            <Grid ColumnSpacing="5" Padding="5,1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image x:Name="MainImg1" Grid.Column="0" Source="icon" WidthRequest="24" HeightRequest="24" Aspect="AspectFit"/>
+                <local1:CustomEntry x:Name="MainEntry" Grid.Column="1" Grid.ColumnSpan="2" HeightRequest="36"
+                                   HorizontalOptions="FillAndExpand" BackgroundColor="White" FontSize="Small"  VerticalOptions="Center"
+                                   Placeholder="{Binding Placeholder, Mode=TwoWay}" 
+                                   Text="{Binding Text, Mode=TwoWay}" 
+                                   IsPassword="{Binding IsPassword,Mode=TwoWay}"
+                                   Keyboard="{Binding Keyboard,Mode=TwoWay}"
+                                   PlaceholderColor="{Binding PlaceholderColor,Mode=TwoWay}"
+                                   TextColor="{Binding TextColor,Mode=TwoWay}" />
+                <Image x:Name="MainImg2" Grid.Column="2" Source="icon" WidthRequest="0" HeightRequest="0" Aspect="AspectFit"/>
+            </Grid>
+        </local1:GradientColorStack>
+    </ContentView.Content>
+</ContentView>
